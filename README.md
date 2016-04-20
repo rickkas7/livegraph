@@ -5,7 +5,7 @@ I got a request this morning for a tutorial/example of streaming data from a Pho
 
 The node.js code has two parts:
 
-A HTTP web server that serves the html/css/Javascript for the demo page and also serves Server Sent Events (SSE) for the live data updates. The SSE server sends out 10 bytes for every data simple, so the overhead is pretty low even sending out 50 samples per second.
+A HTTP web server that serves the html/css/Javascript for the demo page and also serves Server Sent Events (SSE) for the live data updates. The SSE server sends out 10 bytes for every data sample, so the overhead is pretty low even sending out 50 samples per second.
 
 A TCP server that accepts a connection from the Photon and receives raw data values, 1 byte per sample. When a new data value is received it’s sent out to all of the web browsers that are currently graphing. Since it’s the node.js server replicating the data you can have many web browsers simultaneously graphing the data without bogging down the Photon.
 
