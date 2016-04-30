@@ -12,8 +12,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		source.addEventListener('message', function(e) {
 			// e.data is the SSE data, which is a two-character hexadecimal string representing a value
 			// console.log("msg=" + e.data);
+                                
             for(var ii = 0; ii < e.data.length; ii += 2) {
-                handleData(parseInt('0x' + e.data.substr(ii, ii + 2)));
+                handleData(parseInt('0x' + e.data.substr(ii, 2)));
             }
 		}, false);
 	}
