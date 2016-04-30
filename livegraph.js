@@ -40,7 +40,7 @@ http.createServer(function (request, response) {
 		// path.normalize prevents using .. to go above the base directory
 		var pathname = path.normalize(requestUrl.pathname);
 		
-		if (pathname == '/data') {
+		if (pathname == '/data' || pathname == '\\data') {
 			// Return SSE data
 			// http://www.html5rocks.com/en/tutorials/eventsource/basics/
 			var headers = {
@@ -55,7 +55,7 @@ http.createServer(function (request, response) {
 		}
 		else {
 		    // Allows http://localhost:8080/ to be used as the URL to retrieve the main index page
-			if (pathname == '/') {
+			if (pathname == '/' || pathname == '\\') {
 				pathname = 'index.html';
 			}
 			 			
@@ -135,4 +135,4 @@ function removeClient(client) {
 
  
 
-console.log('listening on port ' + httpPort + 'for http');
+console.log('listening on port ' + httpPort + ' for http');

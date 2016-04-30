@@ -9,7 +9,11 @@ A HTTP web server that serves the html/css/Javascript for the demo page and also
 
 A TCP server that accepts a connection from the Photon and receives raw data values, 1 byte per sample. When a new data value is received it’s sent out to all of the web browsers that are currently graphing. Since it’s the node.js server replicating the data you can have many web browsers simultaneously graphing the data without bogging down the Photon.
 
+Since there are two listening ports you may need to adjust your firewall rules.
+
 There’s also the static web page code, served up by the node.js server. It’s simple HTML and Javascript code. The graphing is done using HTML5 canvas. It receives data in real-time using Server Sent Events. And it does the whole thing without using any framework (jquery, AngularJS, etc.) - it’s that simple!
+
+Note: Internet Explorer and Microsoft Edge browsers do not support SSE, so you’ll need to use Chrome, Firefox, Opera or Safari. Probably others, as well, but I tested those on Windows and Mac.
 
 To run it, download the source from Github:
 https://github.com/rickkas7/livegraph
