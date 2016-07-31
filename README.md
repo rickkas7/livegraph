@@ -1,7 +1,9 @@
 #livegraph
-Example program using Particle Photon, node.js, SSE, HTML5 Canvas to do real-time graphing
+*Example program using Particle Photon, node.js, SSE, HTML5 Canvas to do real-time graphing*
 
 I got a request this morning for a tutorial/example of streaming data from a Photon to a node.js server, and then graphing it as a web page. I thought that sounded interesting, so here it is. It’s currently sending a sample every 20 milliseconds (50 samples per second) though it can go faster than that. My demo has a potentiometer and when you adjust it, the graph updates in real time!
+
+**Update:** There's a newer version of this code, [localserver] (https://github.com/rickkas7/localserver). The newer version is more complex, but it eliminates the need to hardcode the server IP address in the Photon code, authenticates the data connection, and combines server functions to use a single port for both. There is live graphing example there, as well, using the better infrastructure. 
 
 The node.js code has two parts:
 
